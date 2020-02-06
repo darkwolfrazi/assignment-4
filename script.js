@@ -4,17 +4,10 @@
 // console.log(min(0, -10)); // will output -10
 
 const min = function(n1, n2) {
-    if (n1 < n2){
-    return n1
+    if (n1 <= n2){
+    return n1;
     }
-    else if (n2 < n1)
-    {
-    return n1
-    }
-    else (n1 = n2)
-    {
-        return "they are both equal";
-    }
+    return n2;
 }
 console.log(min(5,10));
 console.log(min(-32,-6));
@@ -24,12 +17,11 @@ console.log(min(0,0));
 // Example Output:
 // console.log(calculateCircumference(5)); // will output 31.4
 
-let u = 2;
-let p = 3.14; 
-let radius = (5);
 
-const calculateCircumference = function (n){
-    return n * p*u;
+
+const calculateCircumference = function (radius){
+    const pi = 3.14; 
+    return radius * pi * 2;
 }
 
 console.log(calculateCircumference(5));
@@ -39,4 +31,14 @@ console.log(calculateCircumference(5));
 // console.log(searchString(“s”, “mississippi”)); // will output 4
 // console.log(searchString(“q”, “mississippi”)); // will output 0
 
+const searchString = (characterLetter, word) => {
+    let numberOfCharacterFound = 0;
+    for (let s = 0; s <= word.length -1; s++)
+    if (word[s] == characterLetter){
+        numberOfCharacterFound++;
+    }
+    return numberOfCharacterFound;
+}
 
+console.log(searchString("s", "mississippi"));
+console.log(searchString("q", "mississippi"));
